@@ -17,8 +17,8 @@
 <body>
 	<div class="container">
 		<ul class="nav nav-pills">
-		  <li role="presentation" class="active"><a href="profile.html">Profile</a></li>
-		  <li role="presentation"><a href="matches.html">Matches</a></li>
+		  <li role="presentation" class="active"><a href="/profile">Profile</a></li>
+		  <li role="presentation"><a href="/matches">Matches</a></li>
 		  <li role="presentation"><a href="favorites.html">Favorites</a></li>
 		</ul>
 		<a href="settings.html">
@@ -53,9 +53,10 @@
 		<div class="row">
 			<form>
 				<div id="form-heading">Info for matching</div>
+				<div id="map"></div>
 			  <div class="form-group">
 			    <label>Address</label>
-			    <input type="name" class="form-control" placeholder="Enter street address">
+			    <input type="address" class="form-control" placeholder="Enter street address">
 			  </div>
 			  <div class="form-group inline">
 			    <label>City</label>
@@ -84,6 +85,10 @@
 	  <button type="submit" class="btn btn-primary save-profile">Save profile</button>
 
 	</div>
-
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdTkVxMu2-AuKYoP2kqYaH43VqNXfSv0o">
+  </script>
+	<script src="../js/get_location.js"></script>
+	<script src="../js/profile_post.js"></script>
 </body>
 </html>
