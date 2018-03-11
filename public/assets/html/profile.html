@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>No Pressure - The next-gen social network</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- jQuery -->
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<!-- Bootstrap Javascript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- Main stylesheet -->
+	<link rel='stylesheet' type= 'text/css' href='../css/style_main.css'>
+</head>
+<body>
+	<div class="container">
+		<ul class="nav nav-pills">
+		  <li role="presentation" class="active"><a href="profile.html">Profile</a></li>
+		  <li role="presentation"><a href="matches.html">Matches</a></li>
+		  <li role="presentation"><a href="favorites.html">Favorites</a></li>
+		</ul>
+		<a href="settings.html">
+			<div class="settings">
+				<div><span class="glyphicon glyphicon-cog"></span></div>
+				<div>Settings</div>
+			</div>
+		</a>
+
+		<div class="row">
+			<form>
+				<div id="form-heading">Basic info</div>
+			  <div class="form-group">
+			    <label>Name</label>
+			    <input type="name" class="form-control" placeholder="Enter full name">
+			  </div>
+			  <div class="form-group">
+			    <label>Profile picture</label>
+			    <input type="picture" class="form-control" placeholder="Enter link to a picture">
+			  </div>
+			  <div class="form-group">
+			    <label>Phone number</label>
+			    <input type="phone" class="form-control" placeholder="Enter phone number">
+			  </div>
+			  <div class="form-group last">
+			    <label>About me</label>
+			    <textarea type="description" class="form-control" placeholder="What would you like people to know about you?"></textarea>
+			  </div>
+			</form>
+		</div>
+
+		<div class="row">
+			<form>
+				<div id="form-heading">Info for matching</div>
+			  <div class="form-group">
+			    <label>Address</label>
+			    <input type="name" class="form-control" placeholder="Enter street address">
+			  </div>
+			  <div class="form-group inline">
+			    <label>City</label>
+			    <input type="city" class="form-control" placeholder="Enter city">
+			  </div>
+			  <div class="form-group inline">
+			    <label>State</label>
+			    <input type="state" class="form-control" placeholder="Enter state">
+			  </div>
+			  <div class="form-group inline">
+			    <label>Zip</label>
+			    <input type="zip" class="form-control" placeholder="Enter zip code">
+			  </div>
+			  <div class="form-group">
+			  	<label>Interests</label>
+	        <div class="input-group">
+	          <input type="interests" class="form-control" placeholder="Search interests" name="srch-term" id="srch-term">
+	          <div class="input-group-btn">
+	              <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+	      		</div>
+	        </div>
+	      </div>
+ 			</form>
+		</div>
+
+	  <button type="submit" class="btn btn-primary save-profile">Save profile</button>
+
+	</div>
+
+</body>
+</html>

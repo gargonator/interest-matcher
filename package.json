@@ -1,7 +1,7 @@
 {
-  "name": "sequelizedBurger",
+  "name": "sequelizedburger",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple app to match people based on their interests and location.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -24,6 +24,7 @@
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.10",
     "mysql2": "^1.5.2",
-    "sequelize": "^4.35.1"
-  }
+    "sequelize": "^4.35.2"
+  },
+  "devDependencies": {}
 }
