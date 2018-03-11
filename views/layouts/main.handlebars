@@ -8,10 +8,38 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery.js"></script>
-		<script src="/assets/js/burgers.js"></script>
         <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="72738870434-fuiu37kp75tt1ftd5bnkgcglitl07bg7.apps.googleusercontent.com">
+		<script src="/assets/js/matcher.js"></script>
+        
 	</head>
 	<body>
 		{{{ body }}}
+        <script>
+            function onSignIn(googleUser) {
+                console.log("enter signin");
+                var profile = googleUser.getBasicProfile();
+                console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                console.log('Name: ' + profile.getName());
+                console.log('Image URL: ' + profile.getImageUrl());
+                console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            }
+            function signOut() {
+                console.log("entra sign out");
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                console.log('User signed out.');
+            
+            });
+          // auth2.disconnect().then(function () {
+          //   console.log("user disconnected");
+          //     //Do stuff here after the user has been signed out, you can still authenticate the token with Google on the server side
+      
+          // })
+      }
+        </script>
+        <a href="#" onclick="signOut();">Sign out</a>
+               
 	</body>
 </html>

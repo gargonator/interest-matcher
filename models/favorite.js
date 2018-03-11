@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes){
 
     var Favorite = sequelize.define("Favorite",{
-        Favorited_User:{
+        favorited_user:{
             type:DataTypes.STRING
         },
     })

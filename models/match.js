@@ -1,13 +1,13 @@
 module.exports = function(sequelize, DataTypes){
 
     var Match = sequelize.define("Match",{
-        Matched_User:{
-            type:DataTypes.STRING
-        },
-        Distance:{
+        matched_user:{
             type:DataTypes.INTEGER
         },
-        Matched_Interests:{
+        distance:{
+            type:DataTypes.INTEGER
+        },
+        matched_interests:{
             type:DataTypes.STRING
         },
     });

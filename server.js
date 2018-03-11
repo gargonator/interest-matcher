@@ -37,24 +37,12 @@ require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-
-//associations
-// =============================================================
-const user = db.User;
-const favorite = db.Favorite;
-const interest = db.Interest;
-const match = db.Match;
-
-user.hasMany(favorite);
-user.hasMany(interest);
-user.hasMany(match);
-
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: true })
+.then(function(){   
   app.listen(PORT, function() {
-    console.log(db.Match);
-    
-
-    
     console.log("App listening on PORT " + PORT);
   });
+})
+.catch(function(err){
+  console.error('ERRROR', err);
 });
