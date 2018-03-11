@@ -4,6 +4,7 @@ var db = require("../models");
 const User = db.User;
 const Favorite = db.Favorite;
 const Match = db.Match;
+const Interest = db.Interest;
 //get all users or a specific user
 module.exports = function(app){
     
@@ -50,13 +51,21 @@ module.exports = function(app){
      //********** Matches **********************************/
     
     //get matches by user
-    app.get('/api/favorites/:id', function(req,res){
+    app.get('/api/matches/:id', function(req,res){
         Match.findAll({
             where: {
               UserId: req.params.id
             }
           })
         .then(favorite => res.json(favorite));
+    });
+
+    //********** Interest **********************************/
+    
+    //get all interest
+    app.get('/api/interests/', function(req,res){
+        Interest.findAll()
+        .then(interests => res.json(interests));
     });
     
 }
