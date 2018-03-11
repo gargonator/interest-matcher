@@ -14,27 +14,32 @@ module.exports = function(app) {
 
   // index route 
   app.get("/", function(req, res) {
-    // res.sendFile(path.join(__dirname, "../public/index.html"));
-    res.render('index');
+    res.sendFile(path.join(__dirname, "../public/assets/html/index.html"));
+    // res.render('index');
   });
 
   //Sign up route
   app.get("/signup", function(req, res) {
-    // res.sendFile(path.join(__dirname, "../public/signup.html"));
-    res.render("signup");
+    res.sendFile(path.join(__dirname, "../public/assets/html/signup.html"));
+    // res.render("signup");
   });
   //Login route
   app.get("/login", function(req, res) {
-    // res.sendFile(path.join(__dirname, "../public/login.html"));
-    res.render("login");
+    res.sendFile(path.join(__dirname, "../public/assets/html/login.html"));
+    // res.render("login");
     
   });
 
   // Route to the profile page
   app.get("/profile", function(req, res) {
-    // res.sendFile(path.join(__dirname, "../public/profile.html"));
-    res.render("profile");
+    res.sendFile(path.join(__dirname, "../public/assets/html/profile.html"));
+    // res.render("profile");
   });
 
+ // Route to the matches page
+ app.get("/matches", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/assets/html/matches.html"));
+  // res.render("profile");
+});
 
 };
