@@ -1,0 +1,9 @@
+footer {
+  color: rgb(100,100,100);
+}
+
+#sign-up, #login {
+  margin-right: 25px;
+  display: inline-block;
+  width: 100px;
+}
