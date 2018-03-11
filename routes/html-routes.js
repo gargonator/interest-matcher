@@ -20,16 +20,20 @@ module.exports = function(app) {
 
   //Sign up route
   app.get("/signup", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    // res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.render("signup");
   });
   //Login route
   app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    // res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("login");
+    
   });
 
   // Route to the profile page
   app.get("/profile", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/profile.html"));
+    // res.sendFile(path.join(__dirname, "../public/profile.html"));
+    res.render("profile");
   });
 
 

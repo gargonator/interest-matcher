@@ -1,32 +1,62 @@
 
 var db = require("../models");
 
-var Burger = db.Burger;
-
+const User = db.User;
+const Favorite = db.Favorite;
+const Match = db.Match;
+//get all users or a specific user
 module.exports = function(app){
-    //get all burgers
-    app.get('/', function(req,res){
-        
-        Burger.findAll().
-            then(function(allBurgers){
-                var hbsObject = {
-                    burgers: allBurgers
-                }
-                res.render("index",hbsObject)
-            });  
+    
+    //********** USERS **********************************/
+    
+    // Get route for retrieving a single user
+    app.get("/api/users/:id?", function(req, res) {
+        if(req.params.id){
+            User.findById(req.params.id).then(user => res.json(user));
+        }
+        else{
+            User.findAll().then(user => res.json(user));
+        }
+    });
+    
+    //insert one user
+    app.post('/api/user', function(req, res){
+        // res.render("profile");
+        User.create(req.body).then(newUser => res.json({id: newUser.id}));
     });
 
-    //insert one burger
-    app.post('/api/burgers', function(req, res){
-        Burger.create(req.body).then(newBurger => res.json({id: newBurger.id}));
-    });
-
-    //update one burger
-    app.put('/api/burgers/:id', function(req, res){
-        Burger.update(req.body,{
+    //update one user
+    app.put('/api/user/:id', function(req, res){
+        console.log(req.body);
+        User.update(req.body,{
             where:{
                 id: req.params.id
             }
-        }).then(burger => res.status(200).end())
+        }).then(user => res.status(200).end())
     });
+
+    //********** Favorites **********************************/
+    
+    //get favorites by user
+    app.get('/api/favorites/:id', function(req,res){
+        Favorite.findAll({
+            where: {
+              UserId: req.params.id
+            }
+          })
+        .then(favorite => res.json(favorite));
+    });
+
+     //********** Matches **********************************/
+    
+    //get matches by user
+    app.get('/api/favorites/:id', function(req,res){
+        Match.findAll({
+            where: {
+              UserId: req.params.id
+            }
+          })
+        .then(favorite => res.json(favorite));
+    });
+    
 }

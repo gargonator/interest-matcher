@@ -1,3 +1,8 @@
+// const db = require("../models");
+// const Interest = db.Interest;
+// console.log("interest:",Interest);
+// var Interest = require("./interest");
+
 module.exports = function(sequelize, DataTypes){
 
     var User = sequelize.define('User', {
@@ -13,7 +18,6 @@ module.exports = function(sequelize, DataTypes){
             allowNull:false,
             validate:{
                 notEmpty:true,
-                notNull:true
             }
         },
         name:{
@@ -21,22 +25,26 @@ module.exports = function(sequelize, DataTypes){
             allowNull:false,
             validate:{
                 notEmpty:true,
-                notNull:true
             }
         },
-        Description:{
+        description:{
             type:DataTypes.STRING,
         },
-        Picture:{
+        picture:{
             type:DataTypes.STRING,
         },
-        Phone:{
+        phone:{
             type:DataTypes.STRING,
         },
-        LatLong:{
+        latlong:{
             type:DataTypes.STRING,
         }
     })
+    User.belongsToMany(sequelize.models.Interest,{through:"UserInterest"});
+    User.hasMany(sequelize.models.Favorite);
+    User.hasMany(sequelize.models.Match);
+  
+    
      return User;
 
 };

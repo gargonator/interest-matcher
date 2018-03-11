@@ -1,9 +1,9 @@
 
-body {
+/* body {
     background-image: url("../images/imageBurgers.jpg");
-    }
+    } */
 
-ul{
+/* ul{
     list-style-type: none;
 }
 
@@ -11,7 +11,7 @@ li {
     padding: 5px;
     margin: 5px;
     background: #d17905;
-  }
+  } */
 
   
   .label {
@@ -41,11 +41,11 @@ li {
     
   }
   
-  div.card-block{
+  /* div.card-block{
       position: relative;
   }
   button.btn.btn-success{
       position: absolute;
       top:15px;
       right:20px;
-  }
+  } */
