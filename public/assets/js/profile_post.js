@@ -17,6 +17,8 @@ $('.save-profile').on('click', function(event) {
 		description: description
 	};
 
+	// userInfo.interests = inteIdArray;
+
 	// console.log(name, picture, phone, description, address);
 
 	geocodeAddress(address, geocoder, map, userInfo);
