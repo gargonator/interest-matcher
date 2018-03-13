@@ -13,13 +13,14 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- Main stylesheet -->
 	<link rel='stylesheet' type= 'text/css' href='../css/style_main.css'>
+	
 </head>
 <body>
 	<div class="container">
 		<ul class="nav nav-pills">
-		  <li role="presentation"><a href="profile.html">Profile</a></li>
-		  <li role="presentation" class="active"><a href="matches.html">Matches</a></li>
-		  <li role="presentation"><a href="favorites.html">Favorites</a></li>
+		  <li role="presentation"><a href="/profile">Profile</a></li>
+		  <li role="presentation" class="active"><a href="/matches">Matches</a></li>
+		  <li role="presentation"><a href="/favorites">Favorites</a></li>
 		</ul>
 		<a href="settings.html">
 			<div class="settings">
@@ -31,15 +32,12 @@
 		<div class="row">
 			<form>
 				<div id="form-heading">Your matches</div>
-			  <div class="match-placeholder">Match 1</div>
-			  <div class="match-placeholder">Match 2</div>
-			  <div class="match-placeholder">Match 3</div>
-			  <div class="match-placeholder">Match 4</div>
-			  <div class="match-placeholder">Match 5</div>
+				<div class="matches-container"></div>
+			  
 			</form>
 		</div>
 
 	</div>
-
+	<script src="../js/matcher.js"></script>
 </body>
 </html>

@@ -15,9 +15,9 @@ module.exports = {
     return queryInterface.bulkInsert('Users', [{
         email:"bob@gmail.com",
         password: "pass",
-        name: "bob",
+        name: "Bob",
         description: "desc",
-        picture: "/pic/bob.jpg",
+        picture: "../images/bob.jpeg",
         phone: "45234523",
         latlong: "23142/412341",
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
@@ -25,9 +25,9 @@ module.exports = {
     },{
         email:"jane@gmail.com",
         password: "pass",
-        name: "jane",
+        name: "Jane",
         description: "desc",
-        picture: "/pic/jane.jpg",
+        picture: "../images/jane.jpeg",
         phone: "45234523",
         latlong: "23142/412341",
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
@@ -38,12 +38,22 @@ module.exports = {
         password: "pass",
         name: "Eric",
         description: "desc",
-        picture: "/pic/eric.jpg",
+        picture: "../images/erick.jpeg",
         phone: "45234523",
         latlong: "23142/412341",
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-    },], {});
+    },{
+      email:"amy@gmail.com",
+      password: "pass",
+      name: "Amy",
+      description: "desc",
+      picture: "../images/amy.jpeg",
+      phone: "45234523",
+      latlong: "23142/412341",
+      createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
+      updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
+  }], {});
   },
 
   down: (queryInterface, Sequelize) => {
