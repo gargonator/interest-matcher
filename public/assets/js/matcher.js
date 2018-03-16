@@ -1,5 +1,7 @@
 $(function(){
-    //create new match
+    
+  
+  //create new match
     $(".create-form").on("submit", function(event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
@@ -38,10 +40,58 @@ $(function(){
         );
       });
 
-      gapi.load("auth2",function(){
-          gapi.auth2.init();
-      })
+      // gapi.load("auth2",function(){
+      //     gapi.auth2.init();
+      // })
 
+      //LOAD MATCHES BY USER
+      console.log('load');
+      var container = $(".matches-container");
+      $.get("/api/matches/1",function(data){
+        console.log(data);
+        createMatches(data);
+      });
+
+      function createMatches(data){
+        data.forEach(element => {
+
+            var divRow = $("<div class='match-placeholder' row>");
+            var divCol1 = $("<div class='col-md-4'>");
+            var divCol2 = $("<div class='col-md-4'>");
+            var divCol3 = $("<div class='col-md-4'>");
+            var divC1R1 = $("<div class='row'>");
+            var divC1R2 = $("<div class='row'>");
+            var divC1R3 = $("<div class='row'>");
+            var divC2R1 = $("<div class='row'>");
+            var divC2R2 = $("<div class='row'>");
+            var divC2R3 = $("<div class='row'>");
+            var divC3R1 = $("<div class='row'>");
+            var divC3R2 = $("<div class='row'>");
+            var divC3R3 = $("<div class='row'>");
+            var divC4R1 = $("<div class='row'>");
+            var divC4R2 = $("<div class='row'>");
+            var divC4R3 = $("<div class='row'>");
+            var picture = $("<img>");
+            picture.attr("src",element.picture);
+            divC1R1.append(picture);
+            var name = $("<h5>").text(element.name);
+            divC1R3.append(name);
+            var numberMatchesInterest = $("<h5>").text(element.matched_interests.split(",").length + " matching interests")
+            divC2R1.append(numberMatchesInterest);
+            var bothLikeStr = $("<h5>").text("You both like " + element.matched_interests);
+            divC2R2.append(bothLikeStr);
+            var distance = $("<h5>").text(element.distance + " miles away");
+            divC3R2.append(distance);
+            divCol1.append(divC1R1,divC1R2,divC1R3);
+            divCol2.append(divC2R1,divC2R2,divC2R3);
+            divCol3.append(divC3R1,divC3R2,divC3R3);
+            divRow.append(divCol1,divCol2,divCol3);
+            container.append(divRow);
+        });
+        
+        
+      }
+      
       // function signOut() {
       //     console.log("entra sign out");
       //     var auth2 = gapi.auth2.getAuthInstance();
