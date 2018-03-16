@@ -38,6 +38,18 @@ function geocodeAddress(address,geocoder,map, userInfo) {
 				};
 	    	userInfo.latlong = JSON.stringify(latlng);
 	    	console.log(userInfo);
+
+	    	// post user info
+	    	$.ajax('/api/user/3', {
+          type: "PUT",
+          data: userInfo
+        }).then(
+          function(data, status) {
+            // Reload the page to get the updated list
+            console.log('Data: ', data);
+            console.log('Status: ', status);
+          }
+        );
 			}
 			else {
 				alert("Sorry, Geocode was not successful :(")

@@ -1,10 +1,12 @@
-
 var db = require("../models");
+var compute = require("../public/assets/js/sql_test.js")
 
 const User = db.User;
 const Favorite = db.Favorite;
 const Match = db.Match;
 const Interest = db.Interest;
+
+const getMatches = compute.getMatches;
 //get all users or a specific user
 module.exports = function(app){
     
@@ -28,14 +30,20 @@ module.exports = function(app){
 
     //update one user
     app.put('/api/user/:id', function(req, res){
-        console.log(req.body);
         User.update(req.body,{
             where:{
                 id: req.params.id
             }
-        }).then(user => res.status(200).end())
+        })
+        .then(function()
+        {   
+            // const arrMatches = computematches();
+            // console.log("computematches:",arrMatches);
+            // return Match.bulkCreate(arrMatches);
+            resolve(getMatches(req.body));
+        }).then(matches => res.json(matches))
+        
     });
-
     //********** Favorites **********************************/
     
     //get favorites by user
