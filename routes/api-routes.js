@@ -1,6 +1,6 @@
 
 var db = require("../models");
-
+var getMatches = require("../controllers/matcher.js")
 const User = db.User;
 const Favorite = db.Favorite;
 const Match = db.Match;
@@ -28,12 +28,19 @@ module.exports = function(app){
 
     //update one user
     app.put('/api/user/:id', function(req, res){
-        console.log(req.body);
         User.update(req.body,{
             where:{
                 id: req.params.id
             }
-        }).then(user => res.status(200).end())
+        })
+        .then(results => {
+           return getMatches(req.body, req.params.id);
+        })
+        .then(results => {
+            Match.bulkCreate(results)
+            res.json(results);
+        })
+
     });
 
     //********** Favorites **********************************/
@@ -52,12 +59,8 @@ module.exports = function(app){
     
     //get matches by user
     app.get('/api/matches/:id', function(req,res){
-        Match.findAll({
-            where: {
-              UserId: req.params.id
-            }
-          })
-        .then(favorite => res.json(favorite));
+        db.sequelize.query("select * from Users, matches where Users.id = matches.matched_user and matches.UserId = " + req.params.id, { type: db.sequelize.QueryTypes.SELECT})
+        .then(matches => res.json(matches));
     });
 
     //********** Interest **********************************/
