@@ -1,7 +1,6 @@
 
 var db = require("../models");
-var computematches = require("../app.js");
-var getMatches = require("../public/assets/js/sql_test.js")
+var getMatches = require("../controllers/matcher.js")
 const User = db.User;
 const Favorite = db.Favorite;
 const Match = db.Match;
@@ -42,14 +41,6 @@ module.exports = function(app){
             res.json(results);
         })
 
-
-        //     function()
-        // {   
-        //     const arrMatches = computematches();
-        //     // console.log("computematches:",arrMatches);
-        //     return Match.bulkCreate(arrMatches);
-        // }).then(matches => res.json({id:matches.id}))
-        
     });
 
     //********** Favorites **********************************/

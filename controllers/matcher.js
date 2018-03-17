@@ -1,6 +1,7 @@
-const db = require("../../../models");
+const db = require("../models");
 const table = require("console.table");
 
+// sequelize database constants
 const User = db.User;
 const UserInterest = db.UserInterest;
 const sequelize = db.sequelize;
@@ -21,12 +22,9 @@ user = {
     "updatedAt": "2018-03-13T03:43:35.000Z"
 }
 
-// returns an array of user matches
+// returns a Promise with an array of user matches
 // input: user object
 // output: array of matches
-// console.log(Sequelize.literal('CURRENT_TIMESTAMP(3)'));
-// getMatches(user).then(results => console.log(results));
-
 function getMatches(user, userid) {
 
 	return new Promise((resolve) => {	
@@ -51,15 +49,15 @@ function getMatches(user, userid) {
 					counter1 = counter1 + matchedUsers.length; 
 					// console.log('Counter1: ',counter1)
 					// iterate through each matched user
-					console.log(`I'm in the first loop!`);
+					// console.log(`I'm in the first loop!`);
 					console.log(matchedUsers);
 					matchedUsers.forEach(match => {
-							console.log(`I'm in the second loop!`);
+							// console.log(`I'm in the second loop!`);
 							var matchId = match.UserId;
 							Promise
 								.all([getInterest(interestId),getDistance(userId, matchId)])
 								.then(function(results) {
-									console.log(`The promises resolved!`);
+									// console.log(`The promises resolved!`);
 									var interest_string = results[0];
 									var distance = results[1];
 									// if match is not already stored
@@ -141,7 +139,7 @@ function getMatches(user, userid) {
 				});
 	};
 
-	// 
+	// returns distance between two latitude and longitudes
 	function distance(latlng1, latlng2) {
 
 		// parse strings into JSON objects
@@ -171,9 +169,8 @@ function getMatches(user, userid) {
 
 	}
 
-	// setTimeout(() => console.log(matches),2000);
-
 }; // end get Matches function
 
+// export
 module.exports = getMatches;
 
