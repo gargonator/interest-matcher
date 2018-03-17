@@ -2,7 +2,7 @@ var passport = require('passport');
 
 //configure strategy
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
-var configStrategy = require("./config/config");
+var configStrategy = require("../config/config");
 
 var db = require("../models");
 const User = db.User;
