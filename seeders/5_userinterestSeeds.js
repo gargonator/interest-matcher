@@ -1,5 +1,27 @@
 'use strict';
 
+// creation of seeds array
+var userinterest_seeds = [];
+var id_counter = 1;
+
+for (var i = 1; i <= 100; i++) {
+
+    var userinterest_obj = {
+        UserId: id_counter,
+        InterestId: i,
+        createdAt: '2018-03-14 02:10:55',
+        updatedAt: '2018-03-14 02:10:55',
+    }
+
+    userinterest_seeds.push(userinterest_obj);
+
+    if (i % 10 === 0) {
+        id_counter++;
+    }
+}
+
+// console.log(userinterest_seeds);
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     /*
@@ -12,60 +34,7 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-    return queryInterface.bulkInsert('UserInterest', [{
-        UserId:1,
-        InterestId: 1,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-    },
-    {
-        UserId:1,
-        InterestId: 3,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-    },
-    {
-        UserId:2,
-        InterestId: 2,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-    },
-    {
-        UserId:2,
-        InterestId: 4,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-    },
-    {
-        UserId:3,
-        InterestId: 3,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-    },
-    {
-        UserId:3,
-        InterestId: 1,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-    },
-    {
-        UserId:4,
-        InterestId: 6,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-    },
-    {
-        UserId:5,
-        InterestId: 2,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-    },
-    {
-        UserId:5,
-        InterestId: 6,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-    },], {});
+    return queryInterface.bulkInsert('UserInterest', userinterest_seeds, {});
   },
 
   down: (queryInterface, Sequelize) => {

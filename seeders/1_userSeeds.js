@@ -16,7 +16,7 @@ module.exports = {
         email:"bob@gmail.com",
         password: "pass",
         name: "Bob",
-        description: "desc",
+        description: "Likes long walks on the beach.",
         picture: "../images/bob.jpeg",
         phone: "45234523",
         latlong: JSON.stringify({
@@ -29,26 +29,26 @@ module.exports = {
         email:"jane@gmail.com",
         password: "pass",
         name: "Jane",
-        description: "desc",
+        description: "Plays a mean game of pool.",
         picture: "../images/jane.jpeg",
         phone: "45234523",
         latlong: JSON.stringify({
-  lat: 37.818787,
-  lng: -122.277881,
+  lat: 37.800790,
+  lng: -122.473110,
 }),
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
 
     },{
-        email:"Eric@gmail.com",
+        email:"eric@gmail.com",
         password: "pass",
         name: "Eric",
-        description: "desc",
+        description: "Aspiring CEO.",
         picture: "../images/erick.jpeg",
         phone: "45234523",
         latlong: JSON.stringify({
-  lat: 38.534315,
-  lng: -121.481315,
+  lat: 37.684778,
+  lng: -122.476887,
 }),
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
@@ -57,12 +57,12 @@ module.exports = {
         email:"nick@gmail.com",
         password: "pass",
         name: "Nick",
-        description: "desc",
+        description: "Can juggle 5 balls.",
         picture: "/pic/Nick.jpg",
         phone: "45234523",
         latlong: JSON.stringify({
-  lat: 37.792242,
-  lng: -122.400648,
+  lat: 37.751940,
+  lng: -122.447477,
 }),
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
@@ -71,12 +71,12 @@ module.exports = {
         email:"Alex@gmail.com",
         password: "pass",
         name: "Alex",
-        description: "desc",
+        description: "Goal is to read 50 new books this year.",
         picture: "/pic/alex.jpg",
         phone: "45234523",
         latlong: JSON.stringify({
-  lat: 37.818787,
-  lng: -122.277881,
+  lat: 37.822208,
+  lng: -122.280359,
 }),
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
@@ -85,26 +85,72 @@ module.exports = {
         email:"Betty@gmail.com",
         password: "pass",
         name: "Betty",
-        description: "desc",
+        description: "I like turtles.",
         picture: "/pic/betty.jpg",
         phone: "45234523",
         latlong: JSON.stringify({
-  lat: 38.534315,
-  lng: -121.481315,
+  lat: 37.891902,
+  lng: -122.272254,
 }),
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-    },{
-      email:"amy@gmail.com",
-      password: "pass",
-      name: "Amy",
-      description: "desc",
-      picture: "../images/amy.jpeg",
-      phone: "45234523",
-      latlong: "23142/412341",
-      createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-      updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-  }], {});
+    },
+    {
+        email:"Alexia@gmail.com",
+        password: "pass",
+        name: "Alexia",
+        description: "None of your business.",
+        picture: "/pic/betty.jpg",
+        phone: "45234523",
+        latlong: JSON.stringify({
+  lat: 37.891902,
+  lng: -122.272254,
+}),
+        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
+        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
+    },
+    {
+        email:"Cornelius@gmail.com",
+        password: "pass",
+        name: "Cornelius",
+        description: "All of your base belongs to me.",
+        picture: "/pic/betty.jpg",
+        phone: "45234523",
+        latlong: JSON.stringify({
+  lat: 37.891902,
+  lng: -122.272254,
+}),
+        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
+        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
+    },
+    {
+        email:"Hannah@gmail.com",
+        password: "pass",
+        name: "Hannah",
+        description: "I can beat you at Trivia.",
+        picture: "/pic/betty.jpg",
+        phone: "45234523",
+        latlong: JSON.stringify({
+  lat: 37.891902,
+  lng: -122.272254,
+}),
+        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
+        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
+    },
+    {
+        email:"Roger@gmail.com",
+        password: "pass",
+        name: "Roger",
+        description: "The greatest tennis player of all time.",
+        picture: "/pic/betty.jpg",
+        phone: "45234523",
+        latlong: JSON.stringify({
+  lat: 37.891902,
+  lng: -122.272254,
+}),
+        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
+        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
+    },], {});
   },
 
   down: (queryInterface, Sequelize) => {
