@@ -7,7 +7,7 @@ const user = db.User;
 module.exports = function() {
     console.log("entra init");
   passport.serializeUser(function(user, done) {
-    console.log("entra seiral: ",user);
+    console.log("entra serial: ",user);
       
     done(null, user.id);
   });

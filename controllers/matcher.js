@@ -33,7 +33,7 @@ function getMatches(user, userid) {
 
 		// store user id
 		var userId = parseInt(userid);
-
+		console.log(user.interests);
 		// store array of interest IDs for user
 		var interestIds = JSON.parse(user.interests);
 
@@ -141,7 +141,7 @@ function getMatches(user, userid) {
 
 	// returns distance between two latitude and longitudes
 	function distance(latlng1, latlng2) {
-
+		console.log(latlng1+"/"+lat2)
 		// parse strings into JSON objects
 		var latlng1 = JSON.parse(latlng1);
 		var latlng2 = JSON.parse(latlng2);

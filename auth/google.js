@@ -1,3 +1,5 @@
+
+console.log("enter google");
 var passport = require('passport');
 
 //configure strategy
@@ -5,10 +7,11 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var configStrategy = require("./config/config");
 
 var db = require("../models");
-const User = db.User;
+const user = db.User;
 var init = require('./init');
 
 function generateOrFindUser(accessToken, refreshToken, profile, done){
+    console.log("profile",profile);
     if(profile.emails[0]) {
     //   User.findOrCreate(
     //     { email: profile.emails[0].value },

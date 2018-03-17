@@ -6,7 +6,8 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-var passport = require('passport');
+var passport = require('./auth/google');
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var session = require('express-session');
 // Sets up the Express App
 // =============================================================

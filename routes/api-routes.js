@@ -42,6 +42,7 @@ module.exports = function(app){
 
     //update one user
     app.put('/api/user/:id', function(req, res){
+        console.log(req.body);
         User.update(req.body,{
             where:{
                 id: req.params.id

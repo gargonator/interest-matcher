@@ -2,7 +2,7 @@
 
 
 $('.save-profile').on('click', function(event) {
-
+	console.log("entra profile save");
 	var name = $('input[type=name]').val();
 	var picture = $('input[type=picture]').val();
 	var phone = $('input[type=phone]').val();
@@ -21,7 +21,7 @@ $('.save-profile').on('click', function(event) {
 		description: description,
 		interests: interests
 	};
-
+	console.log("from  click:",userInfo);
 	// userInfo.interests = interestArray;
 
 	// console.log(name, picture, phone, description, address, interests);
