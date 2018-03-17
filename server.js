@@ -6,7 +6,8 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-
+var passport = require('passport');
+var session = require('express-session');
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -21,8 +22,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+
 // Static directory
 app.use(express.static("public/assets"));
+
+//aut middleware
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 
 // set handlebars
 var exphbs = require('express-handlebars');
