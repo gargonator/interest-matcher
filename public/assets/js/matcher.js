@@ -45,7 +45,7 @@ $(function(){
       // })
 
       //LOAD MATCHES BY USER
-      console.log('load');
+      // console.log('load');
       var container = $(".matches-container");
       $.get("/api/matches/1",function(data){
         console.log(data);
