@@ -54,6 +54,11 @@ $(document).ready(function() {
 	});
 });
 
+
+
+// function communicates with firebase to log the favorites
+
+
 	// {
 	// 	"id": 1,
 	// 	"matched_user": 2,

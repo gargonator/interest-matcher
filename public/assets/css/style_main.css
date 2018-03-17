@@ -120,14 +120,21 @@ img{
 
 h5 {
 	font-size: 45px;
+    color: #337ab7;
+    height: 33%;
 }
 
 h3{
 	font-size: 38px;
+    color: #337ab7;
+    height: 23%;
+    margin: 0 0 0 0px;
 }
 
 p{
-	margin: 0 0 10px;
+	margin: 0 0 0 0px;
+    color: #337ab7;
+    height: 33%;
 }
 .favorite-placeholder {
 	width: 100%;
