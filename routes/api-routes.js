@@ -9,7 +9,21 @@ const Interest = db.Interest;
 module.exports = function(app){
     
     //********** USERS **********************************/
+    //test
+    app.get("/api/userfindcreate", function(req, res) {
+        User
+        .findOrCreate({where: {name: 'test',email:"some@gmail.com",password:"123"}})
+        .spread((user, created) => {
+            console.log(user.get({
+            plain: true
+            }))
+            console.log(created)
+            res.json(user);
+        });
+    });
     
+
+
     // Get route for retrieving a single user
     app.get("/api/users/:id?", function(req, res) {
         if(req.params.id){
