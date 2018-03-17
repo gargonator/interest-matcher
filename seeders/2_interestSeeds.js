@@ -1,68 +1,8 @@
 'use strict';
 
-module.exports = {
-  up: (queryInterface, Sequelize) => {
+const db = require('../models');
+const Sequelize = db.Sequelize;
 
-    function seed(array){
-      for(i=0; i<array.length; i++){
-        return queryInterface.bulkInsert('Interests', [{
-          interest:[i]
-          createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-          updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-        }])
-      }
-    }
-    
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-      
-      Example:
-      return queryInterface.bulkInsert('Person', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
-    */
-  //   return queryInterface.bulkInsert('Interests', [{
-  //       interest:"sports",
-  //       createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-  //       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-  //   },{
-  //       interest:"movies",
-  //       createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-  //       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-
-  //   },{
-  //       interest:"hiking",
-  //       createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-  //       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-
-  //   },{
-  //       interest:"reading",
-  //       createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-  //       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-
-  //   },{
-  //       interest:"culture",
-  //       createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-  //       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-  //   },{
-  //       interest:"museums",
-  //       createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-  //       updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
-  //   },], {});
-  // },
-
-  down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('Person', null, {});
-    */
-  }
-};
 
 var array = ["3D printing",
 "Acting",
@@ -599,3 +539,52 @@ var array = ["3D printing",
 "You’re So Bad! Card Game",
 "Yu-Gi-Oh! Trading Card Game",
 "Ziplining"];
+
+
+var interests_seeds = [];
+for (let i = 0; i < array.length; i++) {
+var interest = {
+  interest:array[i],
+  createdAt: '2018-03-14 02:10:55',
+  updatedAt: '2018-03-14 02:10:55'
+}
+interests_seeds.push(interest);
+
+}
+
+
+
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+
+
+    
+
+    
+          
+        
+    
+    /*
+      Add altering commands here.
+      Return a promise to correctly handle asynchronicity.
+      
+      Example:
+      return queryInterface.bulkInsert('Person', [{
+        name: 'John Doe',
+        isBetaMember: false
+      }], {});
+    */
+
+    return queryInterface.bulkInsert('Interests', interests_seeds, {});
+  },
+
+  down: (queryInterface, Sequelize) => {
+    /*
+      Add reverting commands here.
+      Return a promise to correctly handle asynchronicity.
+
+      Example:
+      return queryInterface.bulkDelete('Person', null, {});
+    */
+  }
+};
