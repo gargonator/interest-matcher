@@ -41,7 +41,7 @@ body {
 }
 
 form {
-	width: 100%;
+	/*width: 100%;*/
 	background-color: rgb(240,240,240);
 	border: 1px solid lightgrey;
 	border-radius: 5px;
@@ -108,6 +108,57 @@ img{
 
 .setting-heading {
 	font-weight: bold;
+}
+
+#selection {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.interestPill {
+	background-color: green;
+    width: 101px;
+    height: 20%;
+    text-align: center;
+    border-radius: 25px;
+    margin-left: 5px;
+    margin-top: 6px;
+    height: 37px;
+    padding: 9px;
+}
+
+.wordInPill {
+	font-weight: 700;
+    width: 77px;
+    text-align: center;
+    margin: 0,0;
+    margin: 0,0px;
+    margin: 0px 0px -24px 1px;
+    position: absolute;
+}
+
+.deleteButton {
+    border-radius: 3px;
+    width: 11px;
+    /* position: absolute; */
+    float: right;
+    line-height: 8px;
+    /* outline-width: 14px; */
+    font-size: 13px;
+    border: #9d9d9d solid thin;
+    padding: 2%;
+    /* position: relative; */
+    /* display: flex; */
+    cursor: pointer;
+    /* text-align: center; */
+    margin: 3px -5px 0px 0px;
+    margin: -3 0 0 0px;
+    color: #9d9d9d;
+}
+
+.deleteButton:hover { 
+   border: #4d4b4bab solid;
+   color: #4d4b4bab;
 }
 
 /*input[data-toggle='toggle'] {

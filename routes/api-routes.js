@@ -66,9 +66,9 @@ module.exports = function(app){
     //********** Interest **********************************/
     
     //get all interest
-    app.get('/api/interests/', function(req,res){
+    app.get('/api/interests/', function(req, res){
         Interest.findAll()
-        .then(interests => res.json(interests));
+            .then(interests => res.json(interests));
     });
     
 }

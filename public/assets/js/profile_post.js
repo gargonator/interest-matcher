@@ -1,3 +1,6 @@
+
+
+
 $('.save-profile').on('click', function(event) {
 
 	var name = $('input[type=name]').val();
@@ -8,18 +11,20 @@ $('.save-profile').on('click', function(event) {
 		+ ', ' + $('input[type=city]').val();
 		+ ', ' + $('input[type=state]').val();
 		+ ' ' + $('input[type=zip]').val();
+	var interests = localStorage.getItem("interests");
 	
-
+	// userInfo.interests = JSON.stringify(interestObject);
 	var userInfo = {
 		name: name,
 		phone: phone,
 		picture: picture,
-		description: description
+		description: description,
+		interests: interests
 	};
 
-	// userInfo.interests = inteIdArray;
+	// userInfo.interests = interestArray;
 
-	// console.log(name, picture, phone, description, address);
+	// console.log(name, picture, phone, description, address, interests);
 
 	geocodeAddress(address, geocoder, map, userInfo);
 
@@ -37,7 +42,8 @@ function geocodeAddress(address,geocoder,map, userInfo) {
 					lng: results[0].geometry.location.lng()
 				};
 	    	userInfo.latlong = JSON.stringify(latlng);
-	    	console.log(userInfo);
+
+	    	console.log("user",userInfo);
 
 	    	// post user info
 	    	$.ajax('/api/user/3', {
