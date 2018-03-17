@@ -4,6 +4,7 @@ var markers = [];
 
 getLocation();
 
+// get location of user
 function getLocation() {
     if (navigator.geolocation) {
     	console.log(navigator.geolocation.getCurrentPosition(initMap,handleError));
@@ -12,6 +13,7 @@ function getLocation() {
     }
 }
 
+// initialize map
 function initMap(position) {
 
   var mapCenter = { 

@@ -1,6 +1,6 @@
 
 var db = require("../models");
-var computematches = require("../app.js");
+var getMatches = require("../controllers/matcher.js")
 const User = db.User;
 const Favorite = db.Favorite;
 const Match = db.Match;
@@ -33,13 +33,14 @@ module.exports = function(app){
                 id: req.params.id
             }
         })
-        .then(function()
-        {   
-            const arrMatches = computematches();
-            // console.log("computematches:",arrMatches);
-            return Match.bulkCreate(arrMatches);
-        }).then(matches => res.json({id:matches.id}))
-        
+        .then(results => {
+           return getMatches(req.body, req.params.id);
+        })
+        .then(results => {
+            Match.bulkCreate(results)
+            res.json(results);
+        })
+
     });
 
     //********** Favorites **********************************/

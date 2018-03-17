@@ -19,7 +19,10 @@ module.exports = {
         description: "desc",
         picture: "../images/bob.jpeg",
         phone: "45234523",
-        latlong: "23142/412341",
+        latlong: JSON.stringify({
+          lat: 37.792242,
+          lng: -122.400648,
+        }),
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
     },{
@@ -29,7 +32,10 @@ module.exports = {
         description: "desc",
         picture: "../images/jane.jpeg",
         phone: "45234523",
-        latlong: "23142/412341",
+        latlong: JSON.stringify({
+  lat: 37.818787,
+  lng: -122.277881,
+}),
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
 
@@ -40,7 +46,52 @@ module.exports = {
         description: "desc",
         picture: "../images/erick.jpeg",
         phone: "45234523",
-        latlong: "23142/412341",
+        latlong: JSON.stringify({
+  lat: 38.534315,
+  lng: -121.481315,
+}),
+        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
+        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
+    },
+    {
+        email:"nick@gmail.com",
+        password: "pass",
+        name: "Nick",
+        description: "desc",
+        picture: "/pic/Nick.jpg",
+        phone: "45234523",
+        latlong: JSON.stringify({
+  lat: 37.792242,
+  lng: -122.400648,
+}),
+        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
+        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
+    },
+    {
+        email:"Alex@gmail.com",
+        password: "pass",
+        name: "Alex",
+        description: "desc",
+        picture: "/pic/alex.jpg",
+        phone: "45234523",
+        latlong: JSON.stringify({
+  lat: 37.818787,
+  lng: -122.277881,
+}),
+        createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
+        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
+    },
+    {
+        email:"Betty@gmail.com",
+        password: "pass",
+        name: "Betty",
+        description: "desc",
+        picture: "/pic/betty.jpg",
+        phone: "45234523",
+        latlong: JSON.stringify({
+  lat: 38.534315,
+  lng: -121.481315,
+}),
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP(3)'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP(3)')
     },{
