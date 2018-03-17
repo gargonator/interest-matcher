@@ -57,7 +57,7 @@ function getMatches(user, userid) {
 							Promise
 								.all([getInterest(interestId),getDistance(userId, matchId)])
 								.then(function(results) {
-									// console.log(`The promises resolved!`);
+									console.log(`The promises resolved!`);
 									var interest_string = results[0];
 									var distance = results[1];
 									// if match is not already stored

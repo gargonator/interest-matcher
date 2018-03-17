@@ -74,7 +74,7 @@ module.exports = function(app){
     
     //get matches by user
     app.get('/api/matches/:id', function(req,res){
-        db.sequelize.query("select * from Users, matches where Users.id = matches.matched_user and matches.UserId = " + req.params.id, { type: db.sequelize.QueryTypes.SELECT})
+        db.sequelize.query("SELECT * FROM Matches WHERE UserId = " + req.params.id, { type: db.sequelize.QueryTypes.SELECT})
         .then(matches => res.json(matches));
     });
 
